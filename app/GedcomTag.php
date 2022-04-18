@@ -31,6 +31,25 @@ class GedcomTag
 {
     /** All tags that webtrees knows how to translate - including special/internal tags */
     private const ALL_TAGS = [
+        'GOTH',
+        'KULD',
+        'THTI',
+        'PNGM',
+        'PAKS',
+        'SEEM',
+        'UPNY',
+        'TONS',
+        'SURL',
+        'STAR',
+        'SHRM',
+        'RASI',
+        'RISH',
+        'SUBS',
+        'SUTH',
+        'SECT',
+        'VEDA',
+        'BIRM',
+        'MUTT',
         'ABBR',
         'ADDR',
         'ADR1',
@@ -107,6 +126,9 @@ class GedcomTag
         'DEAT:CAUS',
         'DEAT:DATE',
         'DEAT:PLAC',
+        'DEAT:PNGM',
+        'DEAT:PAKS',
+        'DEAT:THTI',
         'DESC',
         'DESI',
         'DEST',
@@ -137,6 +159,12 @@ class GedcomTag
         'FAMC',
         'FAMF',
         'FAMS',
+        'FAMS:CENS:DATE',
+        'FAMS:CENS:PLAC',
+        'FAMS:DIV:DATE',
+        'FAMS:MARR:DATE',
+        'FAMS:MARR:PLAC',
+        'FAMS:NOTE',
         'FAX',
         'FCOM',
         'FCOM:DATE',
@@ -419,6 +447,110 @@ class GedcomTag
     public static function getLabel(string $tag): string
     {
         switch ($tag) {
+            case 'MUTT':
+                return
+                    /* I18N: gedcom tag MUTT*/
+                    I18N::translate('Acharya Mutt - Association to Religious Grut Mutt');
+            case 'BIRM':
+                return
+                    /* I18N: gedcom tag BIRM*/
+                    I18N::translate('Birth Month - Tamil/Sanskrit/Panchang');
+            case 'CAST':
+                return
+                    /* I18N: gedcom tag CAST */
+                    I18N::translate('Caste');
+            case 'PNGM':
+                return
+                    /* I18N: gedcom tag PNGM*/
+                    I18N::translate('Panchangam: Month - Chandramanam or Souramana month Name');
+            case 'PAKS':
+                return
+                    /* I18N: gedcom tag PAKS*/
+                    I18N::translate('Panchangam: Paksha - Lunar Phase/Side');
+            case 'THTI':
+                return
+                    /* I18N: gedcom tag THTI*/
+                    I18N::translate('Panchangam Day - Thithi');
+            case 'KULD':
+                return
+                    /* I18N: gedcom tag KULD*/
+                    I18N::translate('Kula Deivam - Family Deity/God');
+            case 'GOTH':
+                return
+                    /* I18N: gedcom tag GOTH*/
+                    I18N::translate('Gothram');
+            case 'SEEM':
+                return
+                    /* I18N: gedcom tag SEEM*/
+                    I18N::translate('Seemantham');
+            case 'SEEM:DATE':
+                return
+                    /* I18N: gedcom tag SEEM*/
+                    I18N::translate('Date of Seemantham');
+            case 'SEEM:PLAC':
+                return
+                    /* I18N: gedcom tag SEEM*/
+                    I18N::translate('Place of Seemantham');
+            case 'UPNY':
+                return
+                    /* I18N: gedcom tag UPNY*/
+                    I18N::translate('Upanayanam');
+            case 'UPNY:DATE':
+                return
+                    /* I18N: gedcom tag UPNY:DATE*/
+                    I18N::translate('Date of Upanayanam');
+            case 'UPNY:PLAC':
+                return
+                    /* I18N: gedcom tag UPNY:PLAC*/
+                    I18N::translate('Place of Upanayanam');
+            case 'TONS':
+                return
+                    /* I18N: gedcom tag TONS*/
+                    I18N::translate('Tonsure');
+            case 'TONS:DATE':
+                return
+                    /* I18N: gedcom tag TONS:DATE*/
+                    I18N::translate('Date of Tonsure');
+            case 'TONS:PLAC':
+                return
+                    /* I18N: gedcom tag TONS:PLAC*/
+                    I18N::translate('Place of Tonsure');
+            case 'SURL':
+                return
+                    /* I18N: gedcom tag SURL*/
+                    I18N::translate('Social Media URL');
+            case 'STAR':
+                return
+                    /* I18N: gedcom tag STAR*/
+                    I18N::translate('Star');
+            case 'SHRM':
+                return
+                    /* I18N: gedcom tag SHRM*/
+                    I18N::translate('Sharma');
+            case 'RASI':
+                return
+                    /* I18N: gedcom tag Rasi*/
+                    I18N::translate('Rasi');
+            case 'RISH':
+                return
+                    /* I18N: gedcom tag RISH*/
+                    I18N::translate('Rishi');
+            case 'SUBS':
+                return
+                    /* I18N: gedcom tag SUBS*/
+                    I18N::translate('Sub Sect - Sub Group/Kulam');
+            case 'SUTH':
+                return
+                    /* I18N: gedcom tag SUTH*/
+                    I18N::translate('Suthram');
+            case 'SECT':
+                return
+                    /* I18N: gedcom tag SECT*/
+                    I18N::translate('Sect - Kulam/Group/Sub Cast');
+            case 'VEDA':
+                return
+                    /* I18N: gedcom tag VEDA*/
+                    I18N::translate('Veda Saka');
             case 'ABBR':
                 /* I18N: gedcom tag ABBR */
                 return I18N::translate('Abbreviation');
@@ -543,7 +675,7 @@ class GedcomTag
                 return I18N::translate('Census place');
             case '_UPD': // Family Tree Builder uses "1 _UPD 14 APR 2012 00:14:10 GMT-5" instead of 1 CHAN/2 DATE/3 TIME
             case 'CHAN':
-            /* I18N: gedcom tag CHAN */
+                /* I18N: gedcom tag CHAN */
                 return I18N::translate('Last change');
             case 'CHAN:DATE':
                 /* I18N: gedcom tag CHAN:DATE */
@@ -626,6 +758,12 @@ class GedcomTag
                 return I18N::translate('Date of death');
             case 'DEAT:PLAC':
                 return I18N::translate('Place of death');
+            case 'DEAT:PNGM':
+                return I18N::translate('Panchangam Month Name of death');
+            case 'DEAT:PAKS':
+                return I18N::translate('Panchangam Paksham of death(Sukla or Krishna');
+            case 'DEAT:THTI':
+                return I18N::translate('Panchangam Thithi of death');
             case 'DESC':
                 /* I18N: gedcom tag DESC */
                 return I18N::translate('Descendants');
@@ -703,6 +841,18 @@ class GedcomTag
             case 'FAMS':
                 /* I18N: gedcom tag FAMS */
                 return I18N::translate('Family as a spouse');
+            case 'FAMS:CENS:DATE':
+                return I18N::translate('Spouse census date');
+            case 'FAMS:CENS:PLAC':
+                return I18N::translate('Spouse census place');
+            case 'FAMS:DIV:DATE':
+                return I18N::translate('Date of divorce');
+            case 'FAMS:MARR:DATE':
+                return I18N::translate('Date of marriage');
+            case 'FAMS:MARR:PLAC':
+                return I18N::translate('Place of marriage');
+            case 'FAMS:NOTE':
+                return I18N::translate('Spouse note');
             case 'FAX':
                 /* I18N: gedcom tag FAX */
                 return I18N::translate('Fax');
@@ -868,7 +1018,7 @@ class GedcomTag
                 return I18N::translate('Phone');
             case '_PLACE': // Family Tree Builder uses OBJE:_PLACE
             case 'PLAC':
-            /* I18N: gedcom tag PLAC */
+                /* I18N: gedcom tag PLAC */
                 return I18N::translate('Place');
             case 'PLAC:FONE':
                 return I18N::translate('Phonetic place');
@@ -926,7 +1076,7 @@ class GedcomTag
             case '_PHOTO_RIN':
                 // Family Tree Builder uses "0 OBJE/1 _PHOTO_RIN"
                 // no  break
-            case '_PRIN':// Family Tree Builder uses "0 _ALBUM/1 _PHOTO/2 _PRIN"
+            case '_PRIN': // Family Tree Builder uses "0 _ALBUM/1 _PHOTO/2 _PRIN"
             case 'RIN':
                 /* I18N: gedcom tag RIN */
                 return I18N::translate('Record ID number');
@@ -1297,7 +1447,36 @@ class GedcomTag
             case Individual::RECORD_TYPE:
                 $tags = [
                     // Facts, attributes for individuals (no links to FAMs)
+                    'GOTH',
+                    'THTI',
+                    'PNGM',
+                    'PAKS',
+                    'KULD',
+                    'SEEM',
+                    'UPNY',
+                    'TONS',
+                    'SURL',
+                    'STAR',
+                    'SHRM',
+                    'RASI',
+                    'RISH',
+                    'SUBS',
+                    'SUTH',
+                    'SECT',
+                    'VEDA',
+                    'BIRM',
+                    'MUTT',
                     'RESN',
+                    'PHON',
+                    'EMAIL',
+                    'ADDR',
+                    'ADR1',
+                    'ADR2',
+                    'CITY',
+                    'STAE',
+                    'POST',
+                    'CTRY',
+                    'SURL',
                     'NAME',
                     'SEX',
                     'BIRT',
