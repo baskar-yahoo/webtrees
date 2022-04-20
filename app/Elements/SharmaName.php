@@ -23,7 +23,7 @@ namespace Fisharebest\Webtrees\Elements;
  * SHARMA_NAME := {Size=1:90}
  * A name of the Sharma, a Religiour Name, given to a male person after his upanayanam.
  */
-class SharmName extends AbstractElement
+class SharmaName extends AbstractElement
 {
     protected const MAXIMUM_LENGTH = 90;
 

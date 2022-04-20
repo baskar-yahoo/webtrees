@@ -210,6 +210,26 @@ use Fisharebest\Webtrees\Elements\XrefRepository;
 use Fisharebest\Webtrees\Elements\XrefSource;
 use Fisharebest\Webtrees\Elements\XrefSubmission;
 use Fisharebest\Webtrees\Elements\XrefSubmitter;
+use Fisharebest\Webtrees\Elements\GothramName;
+use Fisharebest\Webtrees\Elements\KuladeivamName;
+use Fisharebest\Webtrees\Elements\ThitiName;
+use Fisharebest\Webtrees\Elements\PanchangamMonth;
+use Fisharebest\Webtrees\Elements\PakshaName;
+use Fisharebest\Webtrees\Elements\Seemantham;
+use Fisharebest\Webtrees\Elements\Upanayanam;
+use Fisharebest\Webtrees\Elements\Tonsure;
+use Fisharebest\Webtrees\Elements\SocialURL;
+use Fisharebest\Webtrees\Elements\StarName;
+use Fisharebest\Webtrees\Elements\SharmaName;
+use Fisharebest\Webtrees\Elements\RasiName;
+use Fisharebest\Webtrees\Elements\RishiName;
+use Fisharebest\Webtrees\Elements\SubSectName;
+use Fisharebest\Webtrees\Elements\SuthramName;
+use Fisharebest\Webtrees\Elements\SectName;
+use Fisharebest\Webtrees\Elements\VedaName;
+use Fisharebest\Webtrees\Elements\BirthMonth;
+use Fisharebest\Webtrees\Elements\MuttName;
+
 use Fisharebest\Webtrees\I18N;
 
 use function preg_match;
@@ -718,6 +738,40 @@ class ElementFactory implements ElementFactoryInterface
                 '_LOC:*:SOUR:PAGE'               => new WhereWithinSource(I18N::translate('Citation details')),
                 '_LOC:*:SOUR:QUAY'               => new CertaintyAssessment(I18N::translate('Quality of data')),
             ]);
+
+
+            // Vamsa Viruksha extensions
+            $this->register([
+                'INDI:GOTH'                => new GothramName(I18N::translate('Gothram Name')),
+                'INDI:KULD'                => new GothramName(I18N::translate('Gothram Name')),
+                'INDI:THTI'                => new GothramName(I18N::translate('Gothram Name')),
+                'INDI:PNGM'                => new GothramName(I18N::translate('Gothram Name')),
+                'INDI:PAKS'                => new GothramName(I18N::translate('Gothram Name')),
+                'INDI:SURL'                => new GothramName(I18N::translate('Social URL')),
+                'INDI:STAR'                => new GothramName(I18N::translate('Star Name')),
+                'INDI:SHRM'                => new GothramName(I18N::translate('Sharma Name')),
+                'INDI:RASI'                => new GothramName(I18N::translate('Rasi Name')),
+                'INDI:RISH'                => new GothramName(I18N::translate('Rishi(s) Name')),
+                'INDI:SUBS'                => new GothramName(I18N::translate('Sub Sect Name')),
+                'INDI:SUTH'                => new GothramName(I18N::translate('Veda Suthram')),
+                'INDI:SECT'                => new GothramName(I18N::translate('Sect Name')),
+                'INDI:VEDA'                => new GothramName(I18N::translate('Veda Sakha')),
+                'INDI:BIRM'                => new GothramName(I18N::translate('Birth Month')),
+                'INDI:MUTT'                => new GothramName(I18N::translate('Mutt Name')),
+                'INDI:TONS'                => new Adoption(I18N::translate('Tonsure')),
+                'INDI:TONS:DATE'           => new DateValue(I18N::translate('Date of Tonsure')),
+                'INDI:TONS:PLAC'           => new PlaceName(I18N::translate('Place of Tonsure')),
+                'INDI:UPNY'                => new Adoption(I18N::translate('Upanayanam')),
+                'INDI:UPNY:DATE'           => new DateValue(I18N::translate('Date of Upanayanam')),
+                'INDI:UPNY:PLAC'           => new PlaceName(I18N::translate('Place of Upanayanam')),
+                'FAM:SEEM'                => new Adoption(I18N::translate('Seemantham')),
+                'FAM:SEEM:DATE'           => new DateValue(I18N::translate('Date of Seemantham')),
+                'FAM:SEEM:PLAC'           => new PlaceName(I18N::translate('Place of Seemantham')),
+
+
+
+            ]);
+
 
             // Legacy extensions
             $this->register([
@@ -1412,7 +1466,7 @@ class ElementFactory implements ElementFactoryInterface
             'SUBN:ORDI'                => new OrdinanceProcessFlag(I18N::translate('Ordinance')),
             'SUBN:RIN'                 => new AutomatedRecordId(I18N::translate('Record ID number')),
             'SUBN:SUBM'                => new XrefSubmitter(I18N::translate('Submitter')),
-            'SUBN:TEMP'                => new TempleCode(/* I18N: https://en.wikipedia.org/wiki/Temple_(LDS_Church)*/ I18N::translate('Temple')),
+            'SUBN:TEMP'                => new TempleCode(/* I18N: https://en.wikipedia.org/wiki/Temple_(LDS_Church)*/I18N::translate('Temple')),
             'TRLR'                     => new EmptyElement(I18N::translate('Trailer')),
         ];
     }
