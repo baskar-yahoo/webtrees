@@ -764,10 +764,10 @@ class ElementFactory implements ElementFactoryInterface
                 'INDI:UPNY'                => new Upanayanam(I18N::translate('Upanayanam')),
                 'INDI:UPNY:DATE'           => new DateValue(I18N::translate('Date of Upanayanam')),
                 'INDI:UPNY:PLAC'           => new PlaceName(I18N::translate('Place of Upanayanam')),
-                'INDI:*:PHON'              => new PhoneNumber(I18N::translate('Phone')),
-                'FAM:SEEM'                => new Seemantham(I18N::translate('Seemantham')),
-                'FAM:SEEM:DATE'           => new DateValue(I18N::translate('Date of Seemantham')),
-                'FAM:SEEM:PLAC'           => new PlaceName(I18N::translate('Place of Seemantham')),
+                'INDI:PHON'              => new PhoneNumber(I18N::translate('Phone Number')),
+                'INDI:SEEM'                => new Seemantham(I18N::translate('Seemantham')),
+                'INDI:SEEM:DATE'           => new DateValue(I18N::translate('Date of Seemantham')),
+                'INDI:SEEM:PLAC'           => new PlaceName(I18N::translate('Place of Seemantham')),
 
 
 
