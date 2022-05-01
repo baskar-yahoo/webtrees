@@ -1516,7 +1516,6 @@ class GedcomTag
                     'STAE',
                     'POST',
                     'CTRY',
-                    'SURL',
                     'NAME',
                     'SEX',
                     'BIRT',

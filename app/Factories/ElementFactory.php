@@ -776,13 +776,14 @@ class ElementFactory implements ElementFactoryInterface
                 'INDI:SEEM:DATE'           => new DateValue(I18N::translate('Date of Seemantham')),
                 'INDI:SEEM:PLAC'           => new PlaceName(I18N::translate('Place of Seemantham')),
                 'INDI:PHON'                => new PhoneNumber(I18N::translate('Phone Number')),
-                'INDI:VEDA'                => new SocialURL(I18N::translate('Veda Sakha')),
+                'INDI:VEDA'                => new VedaName(I18N::translate('Veda Sakha')),
                 'INDI:STAR'                => new StarName(I18N::translate('Star Name')),
                 'INDI:SHRM'                => new SharmaName(I18N::translate('Sharma Name')),
                 'INDI:RASI'                => new RasiName(I18N::translate('Rasi Name')),
                 'INDI:RISH'                => new RishiName(I18N::translate('Rishi(s) Name')),
                 'INDI:GOTH'                => new GothramName(I18N::translate('Gothram Name')),
                 'INDI:SUTH'                => new SuthramName(I18N::translate('Veda Suthram')),
+                'INDI:SURL'                => new SocialURL(I18N::translate('Social URL')),
 
 
             ]);
