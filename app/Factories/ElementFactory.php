@@ -57,6 +57,7 @@ use Fisharebest\Webtrees\Elements\CharacterSet;
 use Fisharebest\Webtrees\Elements\ChildLinkageStatus;
 use Fisharebest\Webtrees\Elements\Christening;
 use Fisharebest\Webtrees\Elements\Confirmation;
+use Fisharebest\Webtrees\Elements\Contact;
 use Fisharebest\Webtrees\Elements\ContentDescription;
 use Fisharebest\Webtrees\Elements\CopyrightFile;
 use Fisharebest\Webtrees\Elements\CopyrightSourceData;
@@ -229,6 +230,8 @@ use Fisharebest\Webtrees\Elements\SectName;
 use Fisharebest\Webtrees\Elements\VedaName;
 use Fisharebest\Webtrees\Elements\BirthMonth;
 use Fisharebest\Webtrees\Elements\MuttName;
+use Fisharebest\Webtrees\Elements\Pravara;
+use Fisharebest\Webtrees\Elements\Horoscope;
 
 use Fisharebest\Webtrees\I18N;
 
@@ -742,20 +745,25 @@ class ElementFactory implements ElementFactoryInterface
 
             // Vamsa Viruksha extensions
             $this->register([
-                'INDI:GOTH'                => new GothramName(I18N::translate('Gothram Name')),
+                'INDI:PRAV'                => new Pravara(I18N::translate('Pravara Details')),
+                'INDI:PRAV:RISH'                => new RishiName(I18N::translate('Rishi(s) Name')),
+                'INDI:PRAV:GOTH'                => new GothramName(I18N::translate('Gothram Name')),
+                'INDI:PRAV:SUTH'                => new SuthramName(I18N::translate('Veda Suthram')),
+                'INDI:PRAV:VEDA'                => new VedaName(I18N::translate('Veda Sakha')),
+                'INDI:PRAV:SHRM'                => new SharmaName(I18N::translate('Sharma Name')),
                 'INDI:KULD'                => new KuladeivamName(I18N::translate('Kula Deiva Name')),
                 'INDI:THTI'                => new ThitiName(I18N::translate('Panchanga - Thiti Name')),
                 'INDI:PNGM'                => new PanchangamMonth(I18N::translate('Panchanga - Month Name')),
                 'INDI:PAKS'                => new PakshaName(I18N::translate('Panchanga - Paksha Name')),
-                'INDI:SURL'                => new SocialURL(I18N::translate('Social URL')),
-                'INDI:STAR'                => new StarName(I18N::translate('Star Name')),
-                'INDI:SHRM'                => new SharmaName(I18N::translate('Sharma Name')),
-                'INDI:RASI'                => new RasiName(I18N::translate('Rasi Name')),
-                'INDI:RISH'                => new RishiName(I18N::translate('Rishi(s) Name')),
+                'INDI:CONT'                => new Contact(I18N::translate('Contact Details')),
+                'INDI:CONT:PHON'                => new PhoneNumber(I18N::translate('Phone Number')),
+                'INDI:CONT:EMAIL'               => new AddressEmail(I18N::translate('Email address')),
+                'INDI:CONT:SURL'                => new SocialURL(I18N::translate('Social URL')),
+                'INDI:HORO'                => new Horoscope(I18N::translate('Horoscope Facts')),
+                'INDI:HORO:STAR'                => new StarName(I18N::translate('Star Name')),
+                'INDI:HORO:RASI'                => new RasiName(I18N::translate('Rasi Name')),
                 'INDI:SUBS'                => new SubSectName(I18N::translate('Sub Sect Name')),
-                'INDI:SUTH'                => new SuthramName(I18N::translate('Veda Suthram')),
                 'INDI:SECT'                => new SectName(I18N::translate('Sect Name')),
-                'INDI:VEDA'                => new VedaName(I18N::translate('Veda Sakha')),
                 'INDI:BIRM'                => new BirthMonth(I18N::translate('Birth Month')),
                 'INDI:MUTT'                => new MuttName(I18N::translate('Mutt Name')),
                 'INDI:TONS'                => new Tonsure(I18N::translate('Tonsure')),
@@ -764,11 +772,17 @@ class ElementFactory implements ElementFactoryInterface
                 'INDI:UPNY'                => new Upanayanam(I18N::translate('Upanayanam')),
                 'INDI:UPNY:DATE'           => new DateValue(I18N::translate('Date of Upanayanam')),
                 'INDI:UPNY:PLAC'           => new PlaceName(I18N::translate('Place of Upanayanam')),
-                'INDI:PHON'              => new PhoneNumber(I18N::translate('Phone Number')),
                 'INDI:SEEM'                => new Seemantham(I18N::translate('Seemantham')),
                 'INDI:SEEM:DATE'           => new DateValue(I18N::translate('Date of Seemantham')),
                 'INDI:SEEM:PLAC'           => new PlaceName(I18N::translate('Place of Seemantham')),
-
+                'INDI:PHON'                => new PhoneNumber(I18N::translate('Phone Number')),
+                'INDI:VEDA'                => new SocialURL(I18N::translate('Veda Sakha')),
+                'INDI:STAR'                => new StarName(I18N::translate('Star Name')),
+                'INDI:SHRM'                => new SharmaName(I18N::translate('Sharma Name')),
+                'INDI:RASI'                => new RasiName(I18N::translate('Rasi Name')),
+                'INDI:RISH'                => new RishiName(I18N::translate('Rishi(s) Name')),
+                'INDI:GOTH'                => new GothramName(I18N::translate('Gothram Name')),
+                'INDI:SUTH'                => new SuthramName(I18N::translate('Veda Suthram')),
 
 
             ]);

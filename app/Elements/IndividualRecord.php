@@ -34,6 +34,8 @@ class IndividualRecord extends AbstractElement
         'SEEM' => '0:1',
         'UPNY' => '0:1',
         'TONS' => '0:M',
+        'PRAV' => '0:1',
+        'HORO' => '0:1',
         'SURL' => '0:M',
         'STAR' => '0:1',
         'SHRM' => '0:M',

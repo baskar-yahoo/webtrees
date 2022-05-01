@@ -40,8 +40,10 @@ class GedcomTag
         'UPNY',
         'TONS',
         'SURL',
+        'HORO',
         'STAR',
         'SHRM',
+        'PRAV',
         'RASI',
         'RISH',
         'SUBS',
@@ -475,6 +477,10 @@ class GedcomTag
                 return
                     /* I18N: gedcom tag KULD*/
                     I18N::translate('Kula Deivam - Family Deity/God');
+            case 'PRAV:GOTH':
+                return
+                    /* I18N: gedcom tag GOTH*/
+                    I18N::translate('Gothram');
             case 'GOTH':
                 return
                     /* I18N: gedcom tag GOTH*/
@@ -519,18 +525,42 @@ class GedcomTag
                 return
                     /* I18N: gedcom tag SURL*/
                     I18N::translate('Social Media URL');
-            case 'STAR':
+            case 'PRAV':
                 return
-                    /* I18N: gedcom tag STAR*/
-                    I18N::translate('Star');
+                    /* I18N: gedcom tag PRAV*/
+                    I18N::translate('Pravaram - Rishi, Gothra, Veda parampara');
+            case 'HORO':
+                return
+                    /* I18N: gedcom tag HORO*/
+                    I18N::translate('Horoscope Facts');
+            case 'PRAV:SHRM':
+                return
+                    /* I18N: gedcom tag SHRM*/
+                    I18N::translate('Sharma');
             case 'SHRM':
                 return
                     /* I18N: gedcom tag SHRM*/
                     I18N::translate('Sharma');
+            case 'HORO:STAR':
+                return
+                    /* I18N: gedcom tag STAR*/
+                    I18N::translate('Star');
+            case 'STAR':
+                return
+                    /* I18N: gedcom tag STAR*/
+                    I18N::translate('Star');
+            case 'HORO:RASI':
+                return
+                    /* I18N: gedcom tag Rasi*/
+                    I18N::translate('Rasi');
             case 'RASI':
                 return
                     /* I18N: gedcom tag Rasi*/
                     I18N::translate('Rasi');
+            case 'PRAV:RISH':
+                return
+                    /* I18N: gedcom tag RISH*/
+                    I18N::translate('Rishi');
             case 'RISH':
                 return
                     /* I18N: gedcom tag RISH*/
@@ -539,6 +569,10 @@ class GedcomTag
                 return
                     /* I18N: gedcom tag SUBS*/
                     I18N::translate('Sub Sect - Sub Group/Kulam');
+            case 'PRAV:SUTH':
+                return
+                    /* I18N: gedcom tag SUTH*/
+                    I18N::translate('Suthram');
             case 'SUTH':
                 return
                     /* I18N: gedcom tag SUTH*/
@@ -547,6 +581,10 @@ class GedcomTag
                 return
                     /* I18N: gedcom tag SECT*/
                     I18N::translate('Sect - Kulam/Group/Sub Cast');
+            case 'PRAV:VEDA':
+                return
+                    /* I18N: gedcom tag VEDA*/
+                    I18N::translate('Veda Saka');
             case 'VEDA':
                 return
                     /* I18N: gedcom tag VEDA*/
@@ -1456,6 +1494,8 @@ class GedcomTag
                     'UPNY',
                     'TONS',
                     'SURL',
+                    'PRAV',
+                    'HORO',
                     'STAR',
                     'SHRM',
                     'RASI',
