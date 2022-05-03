@@ -182,6 +182,7 @@ class Config
             'AUTH',
             'CHIL',
             'EMAIL',
+            'SURL',
             'FAX',
             'FILE',
             'HUSB',
@@ -384,6 +385,11 @@ class Config
                 'ORDN',
                 'PROP',
                 'RESI',
+            ],
+            'CONT'     => [
+                'PHON',
+                'EMAIL',
+                'SURL',
             ],
             'CAUS'     => [
                 'DEAT',
